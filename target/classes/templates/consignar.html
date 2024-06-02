@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consignar a Cuenta</title>
+    <link rel="stylesheet" type="text/css" href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <h1>Consignar a Cuenta</h1>
+    <form action="/consignar" method="post">
+        <label for="numerocuenta">Numero de la Cuenta:</label>
+        <input type="text" id="numerocuenta" name="cuentaDestino" required>
+    
+        <label for="saldo">Monto a depositar:</label>
+        <input type="text" id="saldo" name="monto" required>
+    
+        <button type="submit">Realizar Consignación</button>
+    </form>
+
+    <script>
+        var numerocuentaInput = document.getElementById('numerocuenta');
+        var saldoInput = document.getElementById('saldo');
+
+        numerocuentaInput.addEventListener('input', function() {
+            var numerocuentaValue = numerocuentaInput.value;
+            var saldoValue = saldoInput.value;
+
+            var realizarPagoUrl = '/cuenta/' + numerocuentaValue + '/' + saldoValue + '/edit/save';
+            realizarPagoLink.setAttribute('href', realizarPagoUrl);
+        });
+
+        saldoInput.addEventListener('input', function() {
+            var numerocuentaValue = numerocuentaInput.value;
+            var saldoValue = saldoInput.value;
+
+            var realizarPagoUrl = '/cuenta/' + numerocuentaValue + '/' + saldoValue + '/edit/save';
+            realizarPagoLink.setAttribute('href', realizarPagoUrl);
+        });
+    </script>
+</body>
+
+</html>

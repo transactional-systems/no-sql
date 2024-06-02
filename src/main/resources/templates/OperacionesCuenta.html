@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracto Cuenta</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <form action="#" th:action="@{/cuenta/new/saveextracto}" method="post">
+        <div th:replace="OperacionesForm :: OperacionesForm(titulo='Extracto cuenta')" class="container border border-2 w-25"></div>
+    </form>
+</body>
+</html>

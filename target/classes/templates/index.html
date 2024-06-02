@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banco de los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container mx-auto">
+
+    <h1>BancAndes</h1>
+    <img th:src="@{/images/Imagen_BancAndes.jpg}" width="250">
+
+
+    <div>
+        <a th:href="@{/cuenta/new}" class="btn btn-primary">Crear Cuenta</a>
+        <a th:href="@{/cuenta/closed}" class="btn btn-primary">Cerrar Cuenta</a>
+        <a th:href="@{/cuenta/deactivated}" class="btn btn-primary">Desactivar Cuenta</a>
+        <a th:href="@{/operacioncuenta/consignar}" class="btn btn-primary">Consignar a Cuenta</a>
+        <a th:href="@{/operacioncuenta/retirar}" class="btn btn-primary">Retirar de Cuenta</a>
+        <a th:href="@{/operacioncuenta/transferir}" class="btn btn-primary">Transferir entre Cuentas</a>
+
+    
+    <div>
+        <a th:href="@{/cliente}" class="btn btn-primary">Crear Cliente</a>
+        <a th:href="@{/oficina}" class="btn btn-primary">Crear Oficina</a>
+        <a th:href="@{/punto/new}" class="btn btn-primary">Crear punto de atencion</a>
+        <a th:href="@{/puntoatencion/eliminar}" class="btn btn-primary">Borrar punto de atencion</a>
+        <a th:href="@{/cuenta/newfiltro}" class="btn btn-primary">Filtrar Cuentas</a>
+        <a th:href="@{/cuenta/newextracto}" class="btn btn-primary">Extracto Cuenta</a>
+    <div>
+    </div>
+    <br/>
+
+</div>
+</body>
+</html>

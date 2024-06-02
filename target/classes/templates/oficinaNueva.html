@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cliente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Agregar Oficina</h2>
+        <form id="formAgregarCliente" action="/oficina/agregar" method="post">
+            <div class="form-group">
+                <label for="_id">ID:</label>
+                <input type="text" class="form-control" id="_id" name="_id" placeholder="ID">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
+            </div>
+            <div class="form-group">
+                <label for="numero_puntos_atencion">Numero Puntos de Atención:</label>
+                <input type="text" class="form-control" id="numero_puntos_atencion" name="numero_puntos_atencion" placeholder="Numero Puntos de Atención">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Cliente</button>
+        </form>
+    </div>
+</body>
+</html>

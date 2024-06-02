@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferir desde Cuentas</title>
+    <link rel="stylesheet" type="text/css" href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <h1>Transferir desde Cuentas</h1>
+    <form action="/transferir" method="post">
+        <label for="numerocuenta">Numero de la Cuenta (Retiro):</label>
+        <input type="text" id="numerocuenta" name="cuentaOrigen" required>
+    
+        <label for="saldo">Monto a Transferir:</label>
+        <input type="text" id="saldo" name="monto" required>
+
+        <label for="numerocuenta2">Numero de la Cuenta (Consignación):</label>
+        <input type="text" id="numerocuenta2" name="cuentaDestino" required>
+    
+        <button type="submit">Realizar Consignación</button>
+    </form>
+
+    <script>
+        var numerocuentaInput = document.getElementById('numerocuenta');
+        var numerocuentaInput = document.getElementById('numerocuenta2');
+        var saldoInput = document.getElementById('saldo');
+
+        numerocuentaInput.addEventListener('input', function() 
+        {
+            var numerocuentaValue = numerocuentaInput.value;
+            var numerocuentaValue2 = numerocuenta2Input.value;
+            var saldoValue = saldoInput.value;
+
+            var realizarPagoUrl = '/cuenta/' + numerocuentaValue + '/' + numerocuentaValue2 + '/' + saldoValue + '/edit/save';
+            realizarPagoLink.setAttribute('href', realizarPagoUrl);
+        });
+
+        saldoInput.addEventListener('input', function() 
+        {
+            var numerocuentaValue = numerocuentaInput.value;
+            var numerocuentaValue2 = numerocuenta2Input.value;
+            var saldoValue = saldoInput.value;
+
+            var realizarPagoUrl = '/cuenta/' + numerocuentaValue + '/' + numerocuentaValue2 + + '/' + saldoValue + '/edit/save';
+            realizarPagoLink.setAttribute('href', realizarPagoUrl);
+        });
+    </script>
+</body>
+
+</html>

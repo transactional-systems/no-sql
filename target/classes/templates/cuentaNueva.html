@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <h1>Crear una Cuenta</h1>
+    <form id="formularioCuenta">
+        <label>Tipo de Cuenta</label>
+        <input type="text" id="tipo" name="tipo" required />
+
+        <label>Estado</label>
+        <input type="text" id="estado" name="estado" required />
+
+        <label>Numero Cuenta</label>
+        <input type="text" id="numeroCuenta" name="numeroCuenta" required />
+
+        <label>Saldo</label>
+        <input type="text" id="saldo" name="saldo" required />
+
+        <label>Fecha Ultima Transaccion</label>
+        <input type="text" id="fecha_ultima_transaccion" name="fecha_ultima_transaccion" required />
+
+        <label>Fecha Creacion</label>
+        <input type="text" id="fecha_creacion" name="fecha_creacion" required />
+        
+        <button type="button" onclick="crearCuenta()">Crear</button>
+    </form>
+
+    <script>
+        function crearCuenta() {
+            var datosCuenta = {
+                tipo: document.getElementById("tipo").value,
+                estado: document.getElementById("estado").value,
+                numeroCuenta: document.getElementById("numeroCuenta").value,
+                saldo: document.getElementById("saldo").value,
+                fecha_ultima_transaccion: document.getElementById("fecha_ultima_transaccion").value,
+                fecha_creacion: document.getElementById("fecha_creacion").value
+            };
+
+            fetch('/cuenta/new/save', 
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datosCuenta)
+            })
+            .then(response => 
+            {
+                if (response.ok) 
+                {
+                    return response.text();
+                } 
+                else 
+                {
+                    throw new Error('Error en la solicitud');
+                }
+            })
+            .then(data => 
+            {
+                console.log(data); // Manejar la respuesta del servidor
+                alert('Cuenta creada correctamente');
+            })
+            .catch(error => 
+            {
+                console.error('Error:', error);
+                alert('Error al crear la cuenta');
+            });
+        }
+    </script>
+</body>
+</html>

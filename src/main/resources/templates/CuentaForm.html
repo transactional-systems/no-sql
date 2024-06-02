@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <div th:fragment="CuentaForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}">Ingresa Datos de la Cuenta</h1>
+        <form>
+            <label class="col-form-label label-margin">TipoCuenta</label>
+            <input class="form-control form-control-small" type="text" id="TipoCuenta" name="TipoCuenta" />
+
+            <label class="col-form-label label-margin">Mínimo saldo</label>
+            <input class="form-control form-control-small" type="number" id="minSaldo" name="minSaldo" />
+
+            <label class="col-form-label label-margin">Máximo saldo</label>
+            <input class="form-control form-control-small" type="number" id="Maxsaldo" name="Maxsaldo" />
+
+            <label class="col-form-label label-margin">fecha creacion</label>
+            <input class="form-control form-control-small" type="text" id="fecha_creacion" name="fecha_creacion" />
+
+            <label class="col-form-label label-margin">fecha ultimo movimiento</label>
+            <input class="form-control form-control-small" type="text" id="fecha_ultimo" name="fecha_ultimo" />
+
+            <label class="col-form-label label-margin">Cliente ID</label>
+            <input class="form-control form-control-small" type="text" id="cliente" name="cliente" />
+            <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-secondary">Buscar</button>
+            </div> 
+            <br>
+            <script>
+                function goBack() {
+                    window.history.back();
+                    return false;
+                }
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>
